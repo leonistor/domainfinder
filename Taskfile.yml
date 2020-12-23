@@ -7,6 +7,8 @@ tasks:
         vars: { NAME: "sprinkle" }
       - task: build_module
         vars: { NAME: "domainify" }
+      - task: build_module
+        vars: { NAME: "coolify" }
     cmds:
       - echo "build done"
     silent: true
