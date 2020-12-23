@@ -1,0 +1,8 @@
+{
+  "gopls": {
+    "buildFlags": [
+      "-tags=wireinject"
+    ],
+    "experimentalWorkspaceModule": true
+  }
+}
