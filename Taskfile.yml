@@ -30,3 +30,10 @@ tasks:
     dir: thesaurus
     cmds:
       - go build
+
+  run:
+    deps: [build]
+    silent: true
+    cmds:
+      - echo "Enter word to search domains, or <Ctr-D> to quit:"
+      - ./bin/synonyms | ./bin/sprinkle | ./bin/coolify | ./bin/domainify | ./bin/available

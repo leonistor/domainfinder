@@ -15,3 +15,7 @@ Trying Makefile alternative: https://taskfile.dev/
 Nice and simple: https://github.com/hairyhenderson/gomplate
 
 Corporate: https://get-ytt.io/
+
+## run
+
+`task run`
