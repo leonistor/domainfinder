@@ -5,6 +5,8 @@ tasks:
     deps:
       - task: build_module
         vars: { NAME: "sprinkle" }
+      - task: build_module
+        vars: { NAME: "domainify" }
     cmds:
       - echo "build done"
     silent: true
