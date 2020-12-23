@@ -9,6 +9,10 @@ tasks:
         vars: { NAME: "domainify" }
       - task: build_module
         vars: { NAME: "coolify" }
+      - task: build_module
+        vars: { NAME: "synonyms" }
+      - task: build_module
+        vars: { NAME: "available" }
     cmds:
       - echo "build done"
     silent: true
@@ -21,3 +25,8 @@ tasks:
     generates:
       - ./bin/{{.NAME}}
     method: timestamp
+
+  build_deps:
+    dir: thesaurus
+    cmds:
+      - go build
