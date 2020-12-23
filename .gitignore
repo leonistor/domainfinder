@@ -4,6 +4,9 @@
 # dot env
 .env
 
+# Task
+.task
+
 # big files!
 /data/
 

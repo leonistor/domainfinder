@@ -1,23 +1,19 @@
 version: 3
 
-vars:
-  MODULES: "sprinkle"
-
 tasks:
-  list:
-    desc: list modules
-    silent: true
-    cmds:
-      - |
-        {{- range $name := splitList " " .MODULES -}}
-          echo {{$name}}
-        {{end}}
-
   build:
-    desc: list modules
-    silent: true
+    deps:
+      - task: build_module
+        vars: { NAME: "sprinkle" }
     cmds:
-      - |
-        {{- range $name := splitList " " .MODULES -}}
-          go build -o bin/{{$name}} {{$name}}/main.go
-        {{end}}
+      - echo "build done"
+    silent: true
+
+  build_module:
+    cmds:
+      - go build -o bin/{{.NAME}} {{.NAME}}/main.go
+    sources:
+      - ./{{.NAME}}/main.go
+    generates:
+      - ./bin/{{.NAME}}
+    method: timestamp
