@@ -1,0 +1,23 @@
+version: 3
+
+vars:
+  MODULES: "sprinkle"
+
+tasks:
+  list:
+    desc: list modules
+    silent: true
+    cmds:
+      - |
+        {{- range $name := splitList " " .MODULES -}}
+          echo {{$name}}
+        {{end}}
+
+  build:
+    desc: list modules
+    silent: true
+    cmds:
+      - |
+        {{- range $name := splitList " " .MODULES -}}
+          go build -o bin/{{$name}} {{$name}}/main.go
+        {{end}}
